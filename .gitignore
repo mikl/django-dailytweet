@@ -1,0 +1,18 @@
+# Python bytecode
+*.py[co]
+
+# Mac OS X cruft
+.DS_Store
+._*
+
+# IDE and code editor configuration files.
+*.esproj
+*.tmproj
+*.kpf
+
+# Local settings override file.
+local_settings.py
+
+# SQLite development database
+dev.db
+
