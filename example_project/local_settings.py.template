@@ -1,0 +1,4 @@
+# Local settings overrides for dailytweets example project. 
+TWITTER_USERNAME = 'YOUR_TWITTER_ACCOUNT'
+TWITTER_PASSWORD = 'YOUR_PASSWORD'
+
