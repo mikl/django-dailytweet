@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<h4>{% trans "Latest tweet" %}</h4>
+{% if tweet %}
+    <p>{{ tweet.message }}</p>
+{% else %}
+    <p>{% trans "No tweets were found" %}</p>
+{% endif %}
+{% endblock %}
+
