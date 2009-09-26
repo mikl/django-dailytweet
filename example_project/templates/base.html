@@ -2,18 +2,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>{% block head_title %}{% endblock %}{% if site_name %} | {{ site_name }}{% endif %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block head_title %}{% endblock %}{% if SITE %} | {{ SITE.name }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" charset="utf-8" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/960.css" type="text/css" media="all" charset="utf-8" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/text.css" type="text/css" media="all" charset="utf-8" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/site.css" type="text/css" media="all" charset="utf-8" />
   {% block extra_head_base %}
       {% block extra_head %}{% endblock %}
   {% endblock %}
 </head>
   
 <body class="{% block body-class %}default{% endblock %}">
-{% block body %}
-    {% block content %}
+<div class="container_12">
+    <div id="header" class="grid_12">
+        <h1>{{ SITE.name }}</h1>
+    </div>
+    <div id="body" class="grid_12">
+    {% block body %}
+        {% block content %}
+        {% endblock %}
     {% endblock %}
-{% endblock %}
+    </div>
+    <div id="footer" class="grid_12">
+    </div>
 </body>
 </html>
 
