@@ -11,9 +11,7 @@ def index(request):
     """
     try:
         tweet = DailyTweet.objects.filter(status_id__isnull=False).order_by('-published_time')[0]
-    except DailyTweet.DoesNotExist:
-        tweet = False
-    except DailyTweet.MultipleObjectsReturned:
+    except IndexError:
         tweet = False
 
     return render_to_response('front.html',
