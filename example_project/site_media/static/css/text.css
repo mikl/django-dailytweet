@@ -9,7 +9,7 @@
 ----------------------------------------------------------------------------------------------------*/
 
 body {
-	font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+	font: 13px/1.5 Palatino, "Palatino Linotype", Georgia, Times, "Times New Roman", serif;
 }
 
 a:focus {
@@ -48,6 +48,10 @@ h5 {
 
 h6 {
 	font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Palatino, “Palatino Linotype”, “Hoefler Text”, Times, “Times New Roman”, serif;
 }
 
 /* `Spacing
