@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 )
 
-if settings.LOCAL_DEV:
+if getattr(settings,'SERVE_MEDIA'):
     urlpatterns += patterns('django.views.static',
         (r'^%s(?P<path>.*)' % settings.STATIC_URL[1:], 'serve',
          {'document_root': settings.STATIC_ROOT}),
