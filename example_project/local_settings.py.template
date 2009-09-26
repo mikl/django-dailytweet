@@ -1,3 +1,12 @@
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = '87flrkb_3qy69diskokzrs!!1vwi7l$j5#1is8ig2uozl9ji7%'
+
+ADMINS = (
+    # ('Your Name', 'your_email@domain.com'),
+)
+
+MANAGERS = ADMINS
+
 # Local settings overrides for dailytweets example project. 
 TWITTER_USERNAME = 'YOUR_TWITTER_ACCOUNT'
 TWITTER_PASSWORD = 'YOUR_PASSWORD'
