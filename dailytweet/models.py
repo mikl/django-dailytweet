@@ -25,6 +25,7 @@ class BigIntegerField(models.IntegerField):
 class DailyTweet(models.Model):
     message = models.CharField(max_length=140, help_text=_('Your Tweet message'))
     publish_date = models.DateField(null=True, blank=True, help_text=_('The date where this Tweet should be published. If empty, it will be published when there is none that matches current date.'))
+    creation_time = models.DateTimeField(auto_now_add=True, editable=False)
     published_time = models.DateTimeField(null=True, blank=True,
                                           editable=False)
     status_id = BigIntegerField(null=True, blank=True, editable=False)
@@ -52,13 +53,21 @@ class DailyTweet(models.Model):
 
         Only returns DailyTweets that are immidiately postable, if
         publish_date is null or current date.
-        Sorted by -publish_date to have those with a defined date first.
         """
         now = datetime.now()
-        tweets = cls.objects.filter(
-            Q(publish_date=now.date()) | Q(publish_date__isnull=True),
-            status_id__isnull=True,
-        ).order_by('-publish_date')
+
+        # First, try to get one with a matching date.
+        tweets = cls.objects.filter(publish_date=now.date(),
+                                    status_id__isnull=True,
+                                   ).order_by('creation_time')
+
+        if tweets:
+            return tweets[0]
+
+        # Otherwise, get one without a publish_date.
+        tweets = cls.objects.filter(publish_date__isnull=True,
+                                    status_id__isnull=True,
+                                   ).order_by('creation_time')
 
         if tweets:
             return tweets[0]
