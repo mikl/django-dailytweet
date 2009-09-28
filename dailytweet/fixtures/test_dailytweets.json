@@ -1,0 +1,42 @@
+[
+    {
+        "pk": 1, 
+        "model": "dailytweet.dailytweet", 
+        "fields": {
+            "published_time": null, 
+            "message": "Headmasters have powers at their disposal with which Prime Ministers have never yet been invested.", 
+            "publish_date": null, 
+            "status_id": null
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "dailytweet.dailytweet", 
+        "fields": {
+            "published_time": null, 
+            "message": "It is a riddle wrapped in a mystery inside an enigma: but perhaps there is a key.", 
+            "publish_date": null, 
+            "status_id": null
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "dailytweet.dailytweet", 
+        "fields": {
+            "published_time": null, 
+            "message": "For now we are looking in a mirror that gives only a dim reflection of reality as in a riddle or enigma\u2026", 
+            "publish_date": null, 
+            "status_id": null
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "dailytweet.dailytweet", 
+        "fields": {
+            "published_time": null, 
+            "message": "It is more blessed to give than to receive.", 
+            "publish_date": null, 
+            "status_id": null
+        }
+    }
+]
